@@ -9,7 +9,6 @@ body{
     flex-direction: column;
     flex-grow: 1;
     min-height: 100dvh;
-    background-color: black;
 }
 
 
@@ -17,6 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background-color: black;
 }
 
 .rowContainer > div {
