@@ -1,7 +1,8 @@
-const rowContainer = document.querySelector('div');
-
-while (rowContainer.childElementCount < 16) {
-    rowContainer.appendChild(document.createElement('div'));
+function createPad(rowContainer) {
+    rowContainer = document.querySelector('div');
+    rowContainer.className = 'rowContainer';
+    while (rowContainer.childElementCount < 16) {
+        rowContainer.appendChild(document.createElement('div'));
 }
 
 [...rowContainer.children].forEach((row) => {
@@ -15,4 +16,16 @@ while (rowContainer.childElementCount < 16) {
 
         row.appendChild(etchSquare);
     }
-})
+}) 
+}
+
+createPad();
+
+function resetPad() {
+    let newRowContainer = document.createElement('div');
+    document.querySelector('div').replaceWith(newRowContainer);
+    createPad(newRowContainer);
+}
+
+const resetButton = document.querySelector('button');
+resetButton.addEventListener('mouseup', () => resetPad())
