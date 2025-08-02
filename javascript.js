@@ -9,6 +9,7 @@ else maxSize = usableHeight;
 
 
 function createPad(rowContainer, size) {
+    if (!Number.isInteger(Number(size))) size = 50;
     if (size > 100 || size < 0 || size.length == 0 ) size = 100;
 
     rowContainer = document.querySelector('div');
