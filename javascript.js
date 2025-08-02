@@ -4,7 +4,6 @@ let buttonHeight = getComputedStyle(resetButton).height.substring(0, 2);
 
 let maxSize = 0;
 let usableHeight = innerHeight - buttonHeight;
-
 if (usableHeight > innerWidth) maxSize = innerWidth
 else maxSize = usableHeight;
 

@@ -5,19 +5,21 @@
 }
 
 button {
-    margin: 5px 0;
+    margin: 8px 0;
 }
+
 
 body{
     display: flex;
     flex-direction: column;
     background-color: aliceblue;
+    height: 100dvh;
+    justify-content: center;
 }
 
 .rowContainer{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     background-color: black;
 }
 
