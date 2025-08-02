@@ -17,8 +17,8 @@ function createPad(rowContainer, size) {
 
     rowContainer = document.querySelector('div');
     rowContainer.className = 'rowContainer';
-    rowContainer.style.width = `${maxSize}px`;
     rowContainer.style.height = `${maxSize}px`;
+    rowContainer.style.width = `${maxSize}px`;
 
     while (rowContainer.childElementCount < size) {
         rowContainer.appendChild(document.createElement('div'));
