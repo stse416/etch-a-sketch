@@ -1,9 +1,12 @@
 const resetButton = document.querySelector('button');
 resetButton.addEventListener('mouseup', () => resetPad())
-let buttonHeight = getComputedStyle(resetButton).height.substring(0, 2);
+let buttonStyle = getComputedStyle(resetButton);
+let buttonHeight = Number(buttonStyle.height.slice(0, buttonStyle.height.indexOf('px')));
+let buttonMargin = Number(buttonStyle.marginBottom.slice(0, buttonStyle.marginBottom.indexOf('px')));
+let buttonDisplace = buttonHeight + buttonMargin;
 
 let maxSize = 0;
-let usableHeight = innerHeight - buttonHeight;
+let usableHeight = innerHeight - buttonDisplace;
 if (usableHeight > innerWidth) maxSize = innerWidth
 else maxSize = usableHeight;
 
@@ -14,8 +17,8 @@ function createPad(rowContainer, size) {
 
     rowContainer = document.querySelector('div');
     rowContainer.className = 'rowContainer';
-    rowContainer.style.height = `${maxSize}px`;
     rowContainer.style.width = `${maxSize}px`;
+    rowContainer.style.height = `${maxSize}px`;
 
     while (rowContainer.childElementCount < size) {
         rowContainer.appendChild(document.createElement('div'));
