@@ -1,12 +1,14 @@
-function createPad(rowContainer) {
+function createPad(rowContainer, size) {
+    if (size > 100 || size < 0 || size.length == 0 ) size = 100;
+
     rowContainer = document.querySelector('div');
     rowContainer.className = 'rowContainer';
-    while (rowContainer.childElementCount < 16) {
+    while (rowContainer.childElementCount < size) {
         rowContainer.appendChild(document.createElement('div'));
     }
 
     [...rowContainer.children].forEach((row) => {
-        while(row.childElementCount < 16) {
+        while(row.childElementCount < size) {
             let etchSquare = document.createElement('div');
 
             etchSquare.addEventListener('mouseenter', () => {
@@ -19,12 +21,13 @@ function createPad(rowContainer) {
     }) 
 }
 
-createPad();
+createPad(document.querySelector('div'), 50);
 
 function resetPad() {
     let newRowContainer = document.createElement('div');
     document.querySelector('div').replaceWith(newRowContainer);
-    createPad(newRowContainer);
+    createPad(newRowContainer, 
+        prompt('What size grid would you like to sketch on? Max value is 100 to create a 100x100 grid'));
 }
 
 const resetButton = document.querySelector('button');
