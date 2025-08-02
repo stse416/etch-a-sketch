@@ -26,7 +26,6 @@ function createPad(rowContainer, size) {
             let etchSquare = document.createElement('div');
 
             etchSquare.addEventListener('mouseenter', () => {
-                etchSquare.className = 'etched';
                 etchSquare.style.opacity = String(Number(getComputedStyle(etchSquare).opacity) - .1);
             })
 
