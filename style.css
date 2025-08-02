@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-grow: 1;
+    min-height: 100dvh;
+    background-color: black;
+}
+
+.rowContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rowContainer > div {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.rowContainer > div > div {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+    opacity: 1.1;
+}
+
+.etched {
+    background-color: rgb(200, 200, 200);
+}

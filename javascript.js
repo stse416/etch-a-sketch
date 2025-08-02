@@ -6,6 +6,13 @@ while (rowContainer.childElementCount < 16) {
 
 [...rowContainer.children].forEach((row) => {
     while(row.childElementCount < 16) {
-        row.appendChild(document.createElement('div'));
+        let etchSquare = document.createElement('div');
+
+        etchSquare.addEventListener('mouseenter', () => {
+            etchSquare.className = 'etched';
+            etchSquare.style.opacity = String(Number(getComputedStyle(etchSquare).opacity) - .1);
+        })
+
+        row.appendChild(etchSquare);
     }
 })
